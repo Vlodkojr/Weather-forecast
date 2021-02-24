@@ -46,15 +46,14 @@ export default function Daily ({data}) {
         }
         fiveDaysWeather.push(dailyWeather);
     } 
-    // console.log(fiveDaysWeather);
+     
 
     return (
-        <div>
-        <OneDay fiveDaysWeather={fiveDaysWeather[0]}/>
-        <OneDay fiveDaysWeather={fiveDaysWeather[1]}/>
-        <OneDay fiveDaysWeather={fiveDaysWeather[2]}/>
-        <OneDay fiveDaysWeather={fiveDaysWeather[3]}/>
-        <OneDay fiveDaysWeather={fiveDaysWeather[4]}/>
-        </div>
+        <ul>
+            {fiveDaysWeather.map((day, index) => 
+            <OneDay key = {index}
+                    hourWeather = {day}
+            />)}
+        </ul>
     )
 }
