@@ -28,6 +28,12 @@ export default function Weather () {
         // setIsLoading(false);
     }, [town]);
 
+    //Try Catch like
+    if(isLoading == false){
+        if(data.message == "city not found"){
+            return document.body.innerText = `Weather for this point ${(town)}, unfortunately, is not on the site.`;
+    }}
+          
     const handleChange = (e) => {
         setTitleTown(e.target.value);
     }
@@ -47,13 +53,12 @@ export default function Weather () {
                      
         {/* {console.log(data)} */}
             {isLoading ? <div>Loading...</div> :
+            
                 <div>
-                    <h1>Weather forecast</h1>
-                    <h3>Town</h3>
+                    <h1><strong>Synoptyk</strong></h1>
+                    <h3>{"Weather in " + town}</h3>
                     <input type = "text" placeholder = "Enter a town" onChange={handleChange}/>
                     <button onClick={handleClick}>Click</button>
-                    {/* {console.log(data)}  */}
-
                     <Daily data={data} />
                     {/* <div className="location">
                         <h1 className="location_timezone"><div>{data.name}</div></h1>
