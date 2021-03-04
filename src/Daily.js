@@ -46,41 +46,48 @@ export default function Daily ({data}) {
 
     let icon = "https://openweathermap.org/img/w/" + (fiveDaysWeather[0][0].weather[0].icon) + ".png";
     let previousIndex = 0;
-    function handleClickDay(index) {
+    function handleClickDay(index, date) {
+        document.getElementsByClassName('insideFive')[index].style.background_color = 'rgb(226, 178, 178)';
         if(index == undefined) index = 0;
-        if(index !== 0){
+        if(index !== 0) {
             document.getElementsByClassName('currentWeather')[0].style.display = "none";
+            document.getElementsByClassName('dayNumber')[0].style.display = "flex";
+            document.getElementsByClassName('dayNumber')[0].innerText = date;
         }else{
-            document.getElementsByClassName('currentWeather')[0].style.display = "block";
+            document.getElementsByClassName('currentWeather')[0].style.display = "flex";
+            document.getElementsByClassName('dayNumber')[0].style.display = "none";
         }
+        
         document.getElementsByClassName('weatherInOneDay')[previousIndex].style.display = "none";
         
-        document.getElementsByClassName('weatherInOneDay')[index].style.display = "block";
+        document.getElementsByClassName('weatherInOneDay')[index].style.display = "flex";
         previousIndex = index;
      }
      
     return (
         <div>
-        <ul className = "fiveDaysForecast" >
-            <li >{onlyDays.map((date, index) =>
-                <h1 key={date.toString()} onClick={() =>handleClickDay(index)}>{date}</h1>
-                )} 
-            </li>
-        </ul>
-        <ul>
-        <div className = "currentWeather">
-            <div>{"Weather now at " + fiveDaysWeather[0][0].dt_txt.split(" ")[1].split(":")[0] + ":00"}</div>
-            <img className="icon" alt="" src={icon}></img>
-            <h1 className="temperature-degree">{Math.floor(fiveDaysWeather[0][0].main.temp) + "°"}</h1>
-        </div> 
-           <div >
-                {fiveDaysWeather.map((day, index) => //
-                    <OneDay key = {index}
-                            everyHourForecastInOneDay = {day}
-                    />
+        <div className = "fiveDaysForecast" >
+                {onlyDays.map((date, index) =>
+                    <h1 className="insideFive" key={date.toString()} onClick={() =>handleClickDay(index, date)}>{date}</h1>
                 )}
+        </div>
+        <div className="innerWrapper">
+            <div className = "currentWeather">
+                <div>{"Weather now at " + fiveDaysWeather[0][0].dt_txt.split(" ")[1].split(":")[0] + ":00"}</div>
+                <img className="icon" alt="" src={icon}></img>
+                <h1 className="temperature-degree">{Math.floor(fiveDaysWeather[0][0].main.temp) + "°"}</h1>
             </div>
-        </ul>
+            <div className="dayNumber">
+
+            </div>
+                <div className="weatherValues">
+                    {fiveDaysWeather.map((day, index) =>
+                        <OneDay key = {index}
+                                everyHourForecastInOneDay = {day}
+                        />
+                    )}
+                </div>
+        </div>
         </div>
     )
 }
