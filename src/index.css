@@ -1,14 +1,20 @@
 body{
   box-sizing: border-box;
+  padding: 0 300px;
 }
 
 .fiveDaysForecast {
-  margin: 10px 20px;
-  padding: 10px 20px;
+  margin: 10px 0;
+  padding: 10px 0;
   display: flex;
-  flex-direction: row;
   background-color: aqua;
-  
+  justify-content: space-between;
+}
+
+.innerWrapper {
+  display: flex;
+  justify-content: space-between;
+  /* width: 500px; */
 }
 
 .fiveDaysForecast h1{
@@ -17,17 +23,65 @@ body{
   color:blue;
   border-color: rgb(65, 53, 53);
   background-color: red;
-  border-radius: 5px;
+  border-radius: 5px;  
+}
+
+.fiveDaysForecast h1:hover {
+  background-color: rgb(226, 178, 178)
+}
+
+/* .insideFive {
+  background-color: rgb(226, 178, 178)
+} */
+.weatherInOneDay {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  color:blue;
+  width: 750px;
+}
+
+.weatherInOneDay:first-child {
   display: flex;
 }
 
-.fiveDaysForecast li{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.weatherInOneDayPressed {
+  display: block;
 }
-  
-.weatherInOneDay {
+
+.newCurrentWeather{
+  margin: 80px 20px;
   display: none;
-  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
 }
+
+.currentWeather {
+  /* width:fit-conten; */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  /* margin: 0 auto; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* align-content: center; */
+}
+
+.hourly {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .weatherWrapper {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .weatherValues {
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+} */

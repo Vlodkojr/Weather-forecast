@@ -7,7 +7,7 @@ export default function Day({weatherInOneHour}) {
     }
     console.log(weatherInOneHour + "++++++++");
     let icon = "https://openweathermap.org/img/w/" + (weatherInOneHour.weather[0].icon) + ".png";
-     let weatherNow = <div></div>;
+    let weatherNow = <div></div>;
 //      let firstList;
 //      if(firstList == undefined){
 //      firstList = useMemo(() => true);

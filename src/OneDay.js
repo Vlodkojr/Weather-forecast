@@ -9,10 +9,10 @@ export default function OneDay({everyHourForecastInOneDay}) {
 
     return (
         <div className="weatherInOneDay">
-            {everyHourForecastInOneDay.map((day, index) => 
-            <Hourly key = {index}
-                    weatherInOneHour = {day}
-            />)}
+                {everyHourForecastInOneDay.map((day, index) => 
+                <Hourly key = {index}
+                        weatherInOneHour = {day}
+                />)}
         </div>
     )
 }
