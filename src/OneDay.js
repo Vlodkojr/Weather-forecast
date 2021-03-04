@@ -1,15 +1,17 @@
 import React  from 'react';
-import Day from './Day';
+import Hourly from './Hourly';
+import './index.css'
 
-export default function OneDay({hourWeather}) {
+
+export default function OneDay({everyHourForecastInOneDay}) {
    
-    console.log(hourWeather + "!!!!!!!!!!!!!!!!!!!!")
+    console.log(everyHourForecastInOneDay + "!!!!!!!!!!!!!!!!!!!!")
 
     return (
-        <div>
-            {hourWeather.map((day, index) => 
-            <Day key = {index}
-                 listItemsDay = {day}
+        <div className="weatherInOneDay">
+            {everyHourForecastInOneDay.map((day, index) => 
+            <Hourly key = {index}
+                    weatherInOneHour = {day}
             />)}
         </div>
     )

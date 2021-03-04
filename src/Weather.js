@@ -58,7 +58,7 @@ export default function Weather () {
                     <h1><strong>Synoptyk</strong></h1>
                     <h3>{"Weather in " + town}</h3>
                     <input type = "text" placeholder = "Enter a town" onChange={handleChange}/>
-                    <button onClick={handleClick}>Click</button>
+                    <button onClick={handleClick}>Search</button>
                     <Daily data={data} />
                     {/* <div className="location">
                         <h1 className="location_timezone"><div>{data.name}</div></h1>
