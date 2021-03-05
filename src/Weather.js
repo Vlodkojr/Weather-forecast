@@ -9,9 +9,7 @@ export default function Weather () {
     const api = `https://api.openweathermap.org/data/2.5/forecast?q=${town}&appid=${api_key}&lang=${language}&units=metric`;
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true)
-    // const [ e, handleChange] = useState(null);
-    //   let icon = "https://openweathermap.org/img/w/" + (data && data.weather[0].icon) + ".png";
-
+  
     useEffect (() => {
         fetch(api)
         .then(response => {
@@ -19,13 +17,9 @@ export default function Weather () {
         })
         .then(data => {
             setData(data);
-            // console.log(data);
             setIsLoading(false);
         })
 
-           
-        
-        // setIsLoading(false);
     }, [town]);
 
     //Try Catch like
@@ -37,23 +31,14 @@ export default function Weather () {
     const handleChange = (e) => {
         setTitleTown(e.target.value);
     }
-    
-    // useEffect(() => {
-    //     handleChange (e  => {
-    //          setTitleTown(e.target.value)
-    //      })
-    //     },[town]);
         
     const handleClick = (e) => {
         setTown(titleTown)  ;                       
     }
                
     return (
-        <div>
-                     
-        {/* {console.log(data)} */}
+        <div>   
             {isLoading ? <div>Loading...</div> :
-            
                 <div>
                     <div className="header">
                         <h1 className="titleName">S<i>Y</i>noptyk</h1>
@@ -64,17 +49,6 @@ export default function Weather () {
                     </div>
                     <h3 className="city">{"Weather in " + town}</h3>
                     <Daily data={data} />
-                    {/* <div className="location">
-                        <h1 className="location_timezone"><div>{data.name}</div></h1>
-                        <img className="icon" alt="" src={icon}></img>
-                    </div>    
-                    <div className="temperature">
-                        <div className="degree-section">
-                        <h2 className="temperature-degree"><div>{Math.floor(data.main.temp)}</div></h2>
-                        <span></span>
-                        </div>
-                        <div className="temperature-description"><div>{data.weather[0].description}</div></div>
-                    </div>  */}
                 </div>
             }  
         </div>

@@ -8,7 +8,6 @@ export default function Daily ({data}) {
     }
     
     let fiveDays = []
-    // try {
 
     for (let i = 0; i < data.list.length; i++) {
         let day = data.list[i].dt_txt;
