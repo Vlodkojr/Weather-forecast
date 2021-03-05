@@ -47,6 +47,7 @@ export default function Daily ({data}) {
     let icon = "https://openweathermap.org/img/w/" + (fiveDaysWeather[0][0].weather[0].icon) + ".png";
     let previousIndex = 0;
     function handleClickDay(index, date) {
+        document.getElementsByClassName("insideFive")[previousIndex].style.background = "rgb(140, 212, 235)";
         document.getElementsByClassName('insideFive')[index].style.background_color = 'rgb(226, 178, 178)';
         if(index == undefined) index = 0;
         if(index !== 0) {
@@ -62,6 +63,7 @@ export default function Daily ({data}) {
         
         document.getElementsByClassName('weatherInOneDay')[index].style.display = "flex";
         previousIndex = index;
+        document.getElementsByClassName("insideFive")[index].style.background = "rgb(221, 247, 110)";
      }
      
     return (
@@ -73,7 +75,7 @@ export default function Daily ({data}) {
         </div>
         <div className="innerWrapper">
             <div className = "currentWeather">
-                <div>{"Weather now at " + fiveDaysWeather[0][0].dt_txt.split(" ")[1].split(":")[0] + ":00"}</div>
+                <div className="weatherNow">{"Weather now at " + fiveDaysWeather[0][0].dt_txt.split(" ")[1].split(":")[0] + ":00"}</div>
                 <img className="icon" alt="" src={icon}></img>
                 <h1 className="temperature-degree">{Math.floor(fiveDaysWeather[0][0].main.temp) + "°"}</h1>
             </div>

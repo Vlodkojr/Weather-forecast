@@ -55,10 +55,14 @@ export default function Weather () {
             {isLoading ? <div>Loading...</div> :
             
                 <div>
-                    <h1><strong>Synoptyk</strong></h1>
-                    <h3>{"Weather in " + town}</h3>
-                    <input type = "text" placeholder = "Enter a town" onChange={handleChange}/>
-                    <button onClick={handleClick}>Search</button>
+                    <div className="header">
+                        <h1 className="titleName">S<i>Y</i>noptyk</h1>
+                        <div className="inputButton">
+                            <input type = "text" placeholder = "Enter a town" onChange={handleChange}/>
+                            <button onClick={handleClick}>Search</button>
+                        </div>
+                    </div>
+                    <h3 className="city">{"Weather in " + town}</h3>
                     <Daily data={data} />
                     {/* <div className="location">
                         <h1 className="location_timezone"><div>{data.name}</div></h1>
