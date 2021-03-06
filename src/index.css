@@ -12,6 +12,10 @@ body{
   color:rgb(78, 164, 190)
 }
 
+.currentWeather .icon {
+  width: 8em;
+}
+
 .header {
   display: flex;
 }

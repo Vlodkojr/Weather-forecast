@@ -84,6 +84,7 @@ export default function Daily ({data}) {
                 <div className="weatherValues">
                     {fiveDaysWeather.map((day, index) =>
                         <OneDay key = {index}
+                                indexOfADay = {index}
                                 everyHourForecastInOneDay = {day}
                         />
                     )}
