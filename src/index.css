@@ -1,6 +1,7 @@
 body{
   box-sizing: border-box;
-  padding: 0 300px;
+  margin: 0;
+  padding: 0 25%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -31,6 +32,7 @@ body{
 }
 
 .inputButton button {
+  margin-left: 5px;
   border-radius: 5px;
   background-color: rgb(222, 232, 252)
 }
@@ -48,8 +50,6 @@ body{
   color:rgb(173, 190, 202)
 }
 
-
-
 .fiveDaysForecast {
   margin: 10px 0;
   padding: 10px 0;
@@ -61,12 +61,18 @@ body{
 
 .innerWrapper {
   display: flex;
-  justify-content: space-between;
+}
+
+.weatherValues {
+  width: 100%;
+  padding-right: 0;
+  display: flex;
 }
 
 .fiveDaysForecast h1{
-  margin: 10px;
-  padding: 20px;
+  position: relative;
+  margin: 1%;
+  padding: 2%;
   color:rgb(46, 46, 56);
   border-color: rgb(65, 53, 53);
   background-color: rgb(140, 212, 235);
@@ -83,7 +89,8 @@ body{
   align-items: center;
   justify-content: space-between;
   color:rgb(48, 48, 54);
-  width: 750px;
+  padding-left: 10px;
+  width: 100%;
 }
 
 .weatherInOneDay:first-child {
