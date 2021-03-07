@@ -6,7 +6,7 @@ body{
 }
 
 .titleName {
-  font-size: 4em;
+  font-size: 4vw;
   padding: 10px;
   margin: 0;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -76,7 +76,9 @@ body{
   color:rgb(46, 46, 56);
   border-color: rgb(65, 53, 53);
   background-color: rgb(140, 212, 235);
-  border-radius: 5px;  
+  border-radius: 5px; 
+  display: flex;
+  justify-content: center; 
 }
 
 .fiveDaysForecast h1:hover {
@@ -122,4 +124,37 @@ body{
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .fiveDaysForecast, .header {
+    display:block;
+  }
+  .inputButton {
+    margin: 0;
+    padding: 0 0 10px 10px;
+  }
+}
+
+@media (max-width: 835px) {
+  body {
+    padding: 0 1%;
+  }
+  
+  .titleName {
+    font-size: 10vw;
+  }
+  
+  .inputButton input {
+    width: 130px;
+  }
+
+  .innerWrapper {
+    display: inline-block;
+    width: 100%;
+  }  
+
+  .weatherInOneDay {
+    margin: 0 5%;
+  }
 }
