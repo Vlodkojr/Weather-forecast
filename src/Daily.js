@@ -1,8 +1,11 @@
-import React  from 'react';
+import React, {useState} from 'react';
 import OneDay from './OneDay';
 import './index.css'
 
 export default function Daily ({data}) {
+
+    const [previousIndex, setPreviousIndex] = useState(0);
+    
     if(data) {
         console.log(data)
     }
@@ -44,7 +47,6 @@ export default function Daily ({data}) {
     } 
 
     let icon = "https://openweathermap.org/img/w/" + (fiveDaysWeather[0][0].weather[0].icon) + ".png";
-    let previousIndex = 0;
     function handleClickDay(index, date) {
         document.getElementsByClassName("insideFive")[previousIndex].style.background = "rgb(140, 212, 235)";
         document.getElementsByClassName('insideFive')[index].style.background_color = 'rgb(226, 178, 178)';
@@ -61,7 +63,7 @@ export default function Daily ({data}) {
         document.getElementsByClassName('weatherInOneDay')[previousIndex].style.display = "none";
         
         document.getElementsByClassName('weatherInOneDay')[index].style.display = "flex";
-        previousIndex = index;
+        setPreviousIndex(index);
         document.getElementsByClassName("insideFive")[index].style.background = "rgb(221, 247, 110)";
      }
      
