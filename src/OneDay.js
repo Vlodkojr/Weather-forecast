@@ -3,7 +3,7 @@ import Hourly from './Hourly';
 import './index.css'
 
 
-export default function OneDay({indexOfADay, everyHourForecastInOneDay}) {
+export default function OneDay({indexOfADay, everyHourForecastInOneDay, day}) {
    
     console.log(everyHourForecastInOneDay + "!!!!!!!!!!!!!!!!!!!!");
     let amountOfPasses = 0;
@@ -18,7 +18,7 @@ export default function OneDay({indexOfADay, everyHourForecastInOneDay}) {
     }
 
     return (
-        <div className="weatherInOneDay">
+        <div className={(indexOfADay == day) ? "weatherInOneDay-active" : "weatherInOneDay"}>
                 {everyHourForecastInOneDay.map((day, index) => 
                 <Hourly key = {index}
                         weatherInOneHour = {day}

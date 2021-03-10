@@ -8,7 +8,7 @@ export default function Weather () {
     const [town, setTown] = useState("Stryi");
     const api = `https://api.openweathermap.org/data/2.5/forecast?q=${town}&appid=${api_key}&lang=${language}&units=metric`;
     const [data, setData] = useState(null);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
   
     useEffect (() => {
         fetch(api)
@@ -48,7 +48,8 @@ export default function Weather () {
                         </div>
                     </div>
                     <h3 className="city">{"Weather in " + town}</h3>
-                    <Daily data={data} />
+                    <Daily data={data}
+                           town = {town}  />
                 </div>
             }  
         </div>

@@ -86,8 +86,12 @@ body{
   transition: 0.3s ease-in-out;
 }
 
-.weatherInOneDay {
-  display: none;
+.fiveDaysForecast h1.active {
+  background-color: rgb(221, 247, 110);
+}
+
+.weatherInOneDay-active {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   color:rgb(48, 48, 54);
@@ -95,22 +99,30 @@ body{
   width: 100%;
 }
 
-.weatherInOneDay:first-child {
-  display: flex;
-}
-
-.weatherInOneDayPressed {
-  display: block;
-}
-
-.dayNumber{
-  margin: 80px 20px;
+.weatherInOneDay {
   display: none;
+}
+
+/* .weatherInOneDay:first-child {
+  display: flex;
+} */
+
+/* .weatherInOneDayPressed {
+  display: block;
+} */
+
+.dayNumber-active{
+  margin: 80px 20px;
+  display: flex;
   font-size: 40px;
   font-weight: bold;
 }
 
-.currentWeather {
+.dayNumber {
+  display: none;
+}
+
+.currentWeather-active {
   font-size: 20px;
   font-weight: bold;
   display: flex;
@@ -118,6 +130,10 @@ body{
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.currentWeather {
+  display: none;
 }
 
 .hourly {
