@@ -6,6 +6,7 @@ body{
 }
 
 .titleName {
+  display: inline-block;
   font-size: 4vw;
   padding: 10px;
   margin: 0;
@@ -17,11 +18,8 @@ body{
   width: 8em;
 }
 
-.header {
-  display: flex;
-}
-
 .inputButton {
+  display: inline-block;
   margin-left: 3em;
   margin-top: 3em;
 }
@@ -39,7 +37,11 @@ body{
 
 .city{
   margin: 0 5px 20px 10px;
-  color:rgb(72, 81, 88);
+  color:rgb(178, 193, 204);
+}
+
+.city span {
+  color:rgb(57, 63, 68);
 }
 
 .strongName {
@@ -87,7 +89,7 @@ body{
 }
 
 .fiveDaysForecast h1.active {
-  background-color: rgb(221, 247, 110);
+  background-color: rgb(247, 220, 164);
 }
 
 .weatherInOneDay-active {
