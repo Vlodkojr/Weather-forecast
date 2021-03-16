@@ -105,14 +105,6 @@ body{
   display: none;
 }
 
-/* .weatherInOneDay:first-child {
-  display: flex;
-} */
-
-/* .weatherInOneDayPressed {
-  display: block;
-} */
-
 .dayNumber-active{
   margin: 80px 20px;
   display: flex;
@@ -145,12 +137,21 @@ body{
 }
 
 @media (max-width: 1200px) {
-  .fiveDaysForecast, .header {
+   .fiveDaysForecast, .header {
     display:block;
   }
   .inputButton {
     margin: 0;
     padding: 0 0 10px 10px;
+  } 
+  
+  .innerWrapper {
+    display: inline-block;
+    width: 100%;
+  } 
+
+  .dayNumber-active {
+    justify-content: center;
   }
 }
 
@@ -166,11 +167,6 @@ body{
   .inputButton input {
     width: 130px;
   }
-
-  .innerWrapper {
-    display: inline-block;
-    width: 100%;
-  }  
 
   .weatherInOneDay {
     margin: 0 5%;
