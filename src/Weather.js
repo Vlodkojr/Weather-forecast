@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Daily from './Daily'
-import InputAndButton from './InputAndButton'
 
-export default function Weather () {
+export default function Weather ({town}) {
     const api_key = "e34be5a16e91490a2961613541b89d8d";
     const language = "ua";
-    const [town, setTown] = useState("Stryi");
     const api = `https://api.openweathermap.org/data/2.5/forecast?q=${town}&appid=${api_key}&lang=${language}&units=metric`;
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -29,18 +27,14 @@ export default function Weather () {
     }}
                
     return (
-        <div>   
+         <div>   
             {isLoading ? <div>Loading...</div> :
                 <div>
-                    <div className="header">
-                        <h1 className="titleName">S<i>Y</i>noptyk</h1>
-                        <InputAndButton setTown = {setTown}  />
-                    </div>
-                    <h3 className="city">{"Weather in " + town}</h3>
+                    <h3 className="city">Weather in <span>{town}</span></h3>
                     <Daily data={data}
                            town = {town}  />
                 </div>
-            }  
-        </div>
+             }   
+         </div>
     )
 }
