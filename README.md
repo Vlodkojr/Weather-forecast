@@ -1,1 +1,1 @@
-# My Weather forecast site on React
+# My Weather forecast site on React JS
