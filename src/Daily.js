@@ -3,11 +3,7 @@ import OneDay from './OneDay';
 import './index.css'
 
 export default function Daily ({data, town}) {
-
-    const [previousIndex, setPreviousIndex] = useState(0);
     const [day, setDay] = useState(0);
-
-    let indexFirst = 0;
 
     useEffect (() => {
         setDay(0);

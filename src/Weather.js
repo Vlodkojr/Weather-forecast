@@ -31,7 +31,7 @@ export default function Weather ({town}) {
             {isLoading ? <div>Loading...</div> :
                 <div>
                     <h3 className="city">Weather in <span>{town}</span></h3>
-                    <Daily data={data}
+                    <Daily data = {data}
                            town = {town}  />
                 </div>
              }   

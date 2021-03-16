@@ -67,8 +67,9 @@ body{
 
 .weatherValues {
   width: 100%;
-  padding-right: 0;
   display: flex;
+  padding: 0 auto;
+  justify-content:center;
 }
 
 .fiveDaysForecast h1{
@@ -137,9 +138,10 @@ body{
 }
 
 @media (max-width: 1200px) {
-   .fiveDaysForecast, .header {
+  .fiveDaysForecast, .header {
     display:block;
   }
+
   .inputButton {
     margin: 0;
     padding: 0 0 10px 10px;
@@ -153,11 +155,25 @@ body{
   .dayNumber-active {
     justify-content: center;
   }
+  
+  .weatherInOneDay-active {
+    padding: 0;
+    margin: 0;
+  }
+
+  .hourly {
+    width: 10vw;
+    height: auto;
+  }
 }
 
 @media (max-width: 835px) {
-  body {
-    padding: 0 1%;
+  body{
+    padding: 0 3px;
+  }
+
+  .titleName, .inputButton {
+    display: block;
   }
   
   .titleName {
@@ -168,7 +184,4 @@ body{
     width: 130px;
   }
 
-  .weatherInOneDay {
-    margin: 0 5%;
-  }
 }
